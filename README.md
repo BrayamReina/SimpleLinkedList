@@ -1,5 +1,5 @@
 # Simple LinkedList
-Este proyecto implementa manualmente una estructura de datos de lista en Java, similar a LinkedList, siguiendo la interfaz List del framework de colecciones de Java.
+Este proyecto implementa manualmente una estructura de datos de lista en Java, similar a LinkedList, siguiendo la interfaz List del framework de colecciones de Java (Link de documentación oficial de Oracle: https://docs.oracle.com/javase/8/docs/api/java/util/LinkedList.html).
 
 ## Descripción
 
@@ -25,11 +25,15 @@ La implementación proporciona una lista dinámica que puede crecer según sea n
 
 ## Características
 
-    Implementación manual de 23 métodos de la interfaz List
-    Estructura de datos dinámica basada en arreglos
-    Tipado genérico para trabajar con cualquier tipo de objeto
-    Operaciones de adición, eliminación, búsqueda y modificación
-    Capacidad de crecimiento automático
+- Implementación manual de 23 métodos de la interfaz List
+
+- Estructura de datos dinámica basada en arreglos
+
+- Tipado genérico para trabajar con cualquier tipo de objeto
+
+- Operaciones de adición, eliminación, búsqueda y modificación
+
+- Capacidad de crecimiento automático
 
 ## Métodos Implementados
 ### Operaciones de Adición
