@@ -5,6 +5,24 @@ Este proyecto implementa manualmente una estructura de datos de lista en Java, s
 
 La implementación proporciona una lista dinámica que puede crecer según sea necesario, con operaciones para agregar, eliminar, buscar y manipular elementos. Todos los métodos principales de la interfaz List han sido implementados desde cero.
 
+## Protocolo para realizar cambios
+
+- entrar al repositorio remoto con el link
+
+- crear bifurcación del repositorio con fork, así tendra una copia en su cuenta personal
+
+- clonar el repositorio
+
+- crear una nueva rama de trabajo que tenga por nombre el nombre del estudiante
+
+- sobre el proyecto clonado realizar la implementación sólo de los métodos asignados
+
+- ejecutar los comandos add y commit correspondientes para preparar la entrega
+
+- hacer push al repositorio origin y la nueva rama para enviar los cambios realizados
+
+- crear el pull request
+
 ## Características
 
     Implementación manual de 23 métodos de la interfaz List
