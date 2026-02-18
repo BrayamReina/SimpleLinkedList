@@ -1,5 +1,5 @@
 # Simple LinkedList
-Este proyecto implementa manualmente una estructura de datos de lista en Java, similar a ArrayList, siguiendo la interfaz List del framework de colecciones de Java.
+Este proyecto implementa manualmente una estructura de datos de lista en Java, similar a LinkedList, siguiendo la interfaz List del framework de colecciones de Java.
 
 ## Descripción
 
