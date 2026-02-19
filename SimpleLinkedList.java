@@ -134,23 +134,23 @@ public class SimpleLinkedList<V> implements List<V> {
         } else {
 
             Node<V> aux = head;
-            Node<V> temp = null;
+            Node<V> prev = null;
             boolean delete = false;
 
             while (aux != null) {
 
                 if (c.contains(aux.getData())) {
 
-                    if (temp == null) {
+                    if (prev == null) {
                         head = aux.getNext();
                     } else {
-                       temp.setNext(aux.getNext());
+                       prev.setNext(aux.getNext());
                     }
 
                     delete = true;
                     
                 } else {
-                    temp = aux;
+                    prev = aux;
                 }
                 aux = aux.getNext();
 
