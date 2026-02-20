@@ -95,12 +95,24 @@ public class SimpleLinkedList<V> implements List<V>{
     @Override
     public boolean equals(Object o) {
         return false;
-    }
+    }    
 
-    // Not implemented
     @Override
-    public V get(int index) {
-        return null;
+    public V get(int index){
+        int counter =0;
+
+        if (index>=size() || index<0 ) {
+            throw new IndexOutOfBoundsException();
+        }
+
+        Node<V> next = head;
+            while (counter< index) {
+                next = next.getNext();
+                counter++;
+            }
+
+        return next.getData();
+        
     }
 
     // Not implemented
@@ -239,5 +251,5 @@ public class SimpleLinkedList<V> implements List<V>{
     public <V> V[] toArray(V[] a) {
         return null;
     }
-
+    
 }
