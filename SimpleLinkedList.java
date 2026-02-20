@@ -1,20 +1,20 @@
 package structures;
 
-import java.util.Collection;
 import java.util.List;
+import java.util.Collection;
+import java.util.Iterator;
 import java.util.ListIterator;
 
-import org.w3c.dom.Node;
-
-public class SimpleLinkedList<V> implements List<V> {
-
+public class SimpleLinkedList<V> implements List<V>{
+    
     private Node<V> head;
 
     public SimpleLinkedList() {
         this.head = null;
     }
 
-    public void add(V e) {
+    @Override
+    public boolean add(V e) {
         Node<V> newNode = new Node<>(e);
         if (head == null) {
             head = newNode;
@@ -25,6 +25,7 @@ public class SimpleLinkedList<V> implements List<V> {
             }
             current.next = newNode;
         }
+        return true;
     }
 
     // Not implemented
@@ -38,14 +39,41 @@ public class SimpleLinkedList<V> implements List<V> {
     public boolean addAll(Collection<? extends V> c) {
         return false;
     }
-
-    // Not implemented
+    
     @Override
     public boolean addAll(int index, Collection<? extends V> c) {
-        return false;
-    }
+        if (c == null) throw new NullPointerException("Collection cannot be null");
+        if (index < 0 || index > size()) throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size());
+        if (c.isEmpty()) return false;
+        for (V element : c) {
+            if (element == null) throw new NullPointerException("Collection cannot contain null elements");
+            if (!(element instanceof Object)) throw new ClassCastException("Element type is not compatible with this list");
+        }
 
-    // Not implemented
+        Node<V> prev = null;
+        Node<V> current = head;
+        for (int i = 0; i < index; i++) {
+            prev = current;
+            current = current.next;
+        }
+
+        Node<V> insertionPoint = current; 
+
+        for (V element : c) {
+            Node<V> newNode = new Node<>(element);
+            newNode.next = insertionPoint;
+            if (prev == null) {
+                head = newNode;
+            } else {
+                prev.next = newNode;
+            }
+            prev = newNode;
+        }
+
+        return true;
+    }
+    
+    //Not implemented
     @Override
     public void clear() {
 
@@ -78,6 +106,15 @@ public class SimpleLinkedList<V> implements List<V> {
     // Not implemented
     @Override
     public int indexOf(Object o) {
+        Node<T> aux = head;
+        int i = 0;
+        while(aux != null){
+            if(aux.getData().equals(o)){
+                return i;
+            }
+            i++;
+            aux = aux.getNext();
+        }
         return -1;
     }
 
@@ -164,11 +201,19 @@ public class SimpleLinkedList<V> implements List<V> {
     public boolean retainAll(Collection<?> c) {
         return false;
     }
-
-    // Not implemented
+    
     @Override
-    public V set(int index, E element) {
-        return null;
+    public V set(int index, V element) {
+        if (index < 0 || index >= size()) {
+            throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size());
+        }
+        Node<V> current = head;
+        for (int i = 0; i < index; i++) {
+            current = current.next;
+        }
+        V oldValue = current.value;
+        current.value = element;
+        return oldValue;
     }
 
     // Not implemented
