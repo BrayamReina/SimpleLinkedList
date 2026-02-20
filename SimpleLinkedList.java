@@ -42,7 +42,7 @@ public class SimpleLinkedList<V> implements List<V>{
     //Not implemented
     @Override
     public void clear() {
-        
+        head=null;
     }
     
     //Not implemented
