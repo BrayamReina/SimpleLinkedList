@@ -1,5 +1,11 @@
 package structures;
 
+import java.util.Collection;
+import java.util.List;
+import java.util.ListIterator;
+
+import org.w3c.dom.Node;
+
 public class SimpleLinkedList<V> implements List<V>{
     
     private Node<V> head;
@@ -27,10 +33,18 @@ public class SimpleLinkedList<V> implements List<V>{
         
     }
     
-    //Not implemented
     @Override
     public boolean addAll(Collection<? extends V> c) {
-        return false;
+        boolean modified = false;
+        if ( c.isEmpty()) {
+            modified = false; 
+        }else{ 
+                for (T dataCollection : c) {
+                add(dataCollection); 
+                modified = true;
+            }
+            }
+        return modified; 
     }
     
     //Not implemented
